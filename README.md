@@ -76,10 +76,4 @@ Chat functionality is powered by the **Gemini API**, allowing users to interact 
 └── README.md
 ```
 
-## 📜 License
 
-MIT — Feel free to use, modify, and build upon this project.
-
----
-
-_Developed with ❤️ by [Chayan](https://github.com/Chayan-03)_
