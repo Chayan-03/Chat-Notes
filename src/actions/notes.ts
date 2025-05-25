@@ -5,6 +5,7 @@ import { prisma } from "@/db/prisma";
 import { handleError } from "@/lib/utils";
 import openai from "@/openai";
 import { ChatCompletionMessageParam } from "openai/resources/index.mjs";
+import { GoogleGenAI } from "@google/genai";
 
 export const createNoteAction = async (noteId: string) => {
   try {
@@ -111,10 +112,11 @@ export const askAIAboutNotesAction = async (
     }
   }
 
-  const completion = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages,
+  const completion = await openai.models.generateContent({
+    model: "gemini-2.0-flash",
+    contents:messages,
   });
 
-  return completion.choices[0].message.content || "A problem has occurred";
+  // return completion.choices[0].message.content || "A problem has occurred";
+  return completion.text;
 };

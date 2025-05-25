@@ -7,12 +7,13 @@
     "build": "pnpm dlx prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "pnpm dlx prisma generate && env $(cat .env.local | xargs) pnpm dlx prisma migrate dev"
+    "migrate": "npx prisma generate && env $(cat .env.local | xargs) npx prisma migrate dev"
   },
   "prisma": {
     "schema": "src/db/schema.prisma"
   },
   "dependencies": {
+    "@google/genai": "^1.0.1",
     "@prisma/client": "^6.3.0",
     "@radix-ui/react-alert-dialog": "^1.1.5",
     "@radix-ui/react-dialog": "^1.1.5",
@@ -23,7 +24,7 @@
     "@radix-ui/react-toast": "^1.2.5",
     "@radix-ui/react-tooltip": "^1.1.7",
     "@supabase/ssr": "^0.5.2",
-    "@supabase/supabase-js": "^2.48.1",
+    "@supabase/supabase-js": "^2.49.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "fuse.js": "^7.0.0",
